@@ -31,3 +31,13 @@
 /Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/obj/Debug/net7.0/MoviesApi.pdb
 /Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/obj/Debug/net7.0/MoviesApi.genruntimeconfig.cache
 /Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/obj/Debug/net7.0/ref/MoviesApi.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Humanizer.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Design.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Relational.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Mono.TextTemplating.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/MySqlConnector.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/Pomelo.EntityFrameworkCore.MySql.dll
+/Users/gguilhermelopes/Desktop/dev/DOTNET/ASP.NET Web Api/MoviesApi/bin/Debug/net7.0/System.CodeDom.dll
