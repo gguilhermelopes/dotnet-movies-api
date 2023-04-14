@@ -15,6 +15,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
+app.UseCors(options =>
+        options.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+
 
 if (app.Environment.IsDevelopment())
 {
