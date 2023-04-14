@@ -29,7 +29,7 @@ public class MoviesController : ControllerBase
 
   public ActionResult<Movie> Get(int id)
   {
-    var movie = _context.Movies?.FirstOrDefault(p => p.MovieId == id);
+    var movie = _context.Movies?.FirstOrDefault(m => m.MovieId == id);
     if (movie is null)
       return NotFound("Couldn't find refered movie.");
     return movie;
@@ -57,5 +57,19 @@ public class MoviesController : ControllerBase
     _context.SaveChanges();
 
     return Ok(movie);
+  }
+
+  [HttpDelete("{id:int}")]
+  public ActionResult Delete(int id)
+  {
+    var movie = _context.Movies?.FirstOrDefault(m => m.MovieId == id);
+
+    if (movie is null)
+      return NotFound("Couldn't find refered movie.");
+
+    _context.Movies?.Remove(movie);
+    _context.SaveChanges();
+
+    return Ok($"{movie.Name} deleted.");
   }
 }
