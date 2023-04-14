@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MoviesApi.Context;
 using MoviesApi.Models;
 
@@ -43,5 +44,18 @@ public class MoviesController : ControllerBase
     _context.SaveChanges();
 
     return new CreatedAtRouteResult("GetMovie", new { id = movie.MovieId }, movie);
+  }
+
+  [HttpPut("{id:int}")]
+
+  public ActionResult Put(int id, Movie movie)
+  {
+    if (id != movie.MovieId)
+      return BadRequest();
+
+    _context.Entry(movie).State = EntityState.Modified;
+    _context.SaveChanges();
+
+    return Ok(movie);
   }
 }
