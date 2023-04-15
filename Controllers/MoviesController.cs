@@ -26,7 +26,6 @@ public class MoviesController : ControllerBase
   }
 
   [HttpGet("{id:int}", Name = "GetMovie")]
-
   public ActionResult<Movie> Get(int id)
   {
     var movie = _context.Movies?.FirstOrDefault(m => m.MovieId == id);
