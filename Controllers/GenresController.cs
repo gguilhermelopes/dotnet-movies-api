@@ -35,7 +35,6 @@ public class GenresController : ControllerBase
   }
 
   [HttpPost]
-
   public ActionResult Post(Genre genre)
   {
     if (genre is null)
@@ -46,6 +45,28 @@ public class GenresController : ControllerBase
     return new CreatedAtRouteResult("GetGenre", new { id = genre.GenreId }, genre);
   }
 
+  [HttpPut("{id:int}")]
+  public ActionResult Put(int id, Genre genre)
+  {
+    if (id != genre.GenreId)
+      return BadRequest();
 
+    _context.Entry(genre).State = EntityState.Modified;
+    _context.SaveChanges();
 
+    return Ok(genre);
+  }
+
+  [HttpDelete("{id:int}")]
+  public ActionResult Delete(int id)
+  {
+    var genre = _context.Genres?.FirstOrDefault(g => g.GenreId == id);
+    if (genre is null)
+      return NotFound("Couldn't find refered genre.");
+
+    _context.Genres?.Remove(genre);
+    _context.SaveChanges();
+
+    return Ok($"Genre {genre.Name} deleted.");
+  }
 }
