@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace MoviesApi.Models;
 
@@ -21,5 +22,6 @@ public class Movie
   public string? ImageURI { get; set; }
   public DateTime EntryDate { get; set; }
   public int GenreId { get; set; }
+  [JsonIgnore]
   public Genre? Genre { get; set; }
 }
