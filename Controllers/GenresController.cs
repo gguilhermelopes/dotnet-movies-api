@@ -34,6 +34,12 @@ public class GenresController : ControllerBase
     return genre;
   }
 
+  [HttpGet("movies")]
+  public ActionResult<IEnumerable<Genre>> GetGenresMovies()
+  {
+    return _context.Genres?.Include(g => g.Movies).ToList();
+  }
+
   [HttpPost]
   public ActionResult Post(Genre genre)
   {
