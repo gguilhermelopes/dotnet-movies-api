@@ -34,4 +34,18 @@ public class GenresController : ControllerBase
     return genre;
   }
 
+  [HttpPost]
+
+  public ActionResult Post(Genre genre)
+  {
+    if (genre is null)
+      return BadRequest();
+    _context.Genres?.Add(genre);
+    _context.SaveChanges();
+
+    return new CreatedAtRouteResult("GetGenre", new { id = genre.GenreId }, genre);
+  }
+
+
+
 }
