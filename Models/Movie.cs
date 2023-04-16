@@ -22,6 +22,7 @@ public class Movie
   public string? ImageURI { get; set; }
   public DateTime EntryDate { get; set; }
   public int GenreId { get; set; }
+
   [JsonIgnore]
   public Genre? Genre { get; set; }
 }

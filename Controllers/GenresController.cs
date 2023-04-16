@@ -19,7 +19,7 @@ public class GenresController : ControllerBase
   [HttpGet]
   public ActionResult<IEnumerable<Genre>> Get()
   {
-    var genres = _context.Genres?.ToList();
+    var genres = _context.Genres?.AsNoTracking().ToList();
     if (genres is null)
       return NotFound("Couldn't find any genres.");
     return genres;
@@ -28,7 +28,7 @@ public class GenresController : ControllerBase
   [HttpGet("{id:int}", Name = "GetGenre")]
   public ActionResult<Genre> Get(int id)
   {
-    var genre = _context.Genres?.FirstOrDefault(g => g.GenreId == id);
+    var genre = _context.Genres?.AsNoTracking().FirstOrDefault(g => g.GenreId == id);
     if (genre is null)
       return NotFound("Couldn't find refered genre.");
     return genre;
@@ -37,7 +37,7 @@ public class GenresController : ControllerBase
   [HttpGet("movies")]
   public ActionResult<IEnumerable<Genre>> GetGenresMovies()
   {
-    return _context.Genres?.Include(g => g.Movies).ToList();
+    return _context.Genres?.AsNoTracking().Include(g => g.Movies).ToList();
   }
 
   [HttpPost]

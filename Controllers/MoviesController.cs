@@ -19,7 +19,7 @@ public class MoviesController : ControllerBase
   [HttpGet]
   public ActionResult<IEnumerable<Movie>> Get()
   {
-    var movies = _context.Movies?.ToList();
+    var movies = _context.Movies?.AsNoTracking().ToList();
     if (movies is null)
       return NotFound("Couldn't find movies.");
     return movies;
@@ -28,7 +28,7 @@ public class MoviesController : ControllerBase
   [HttpGet("{id:int}", Name = "GetMovie")]
   public ActionResult<Movie> Get(int id)
   {
-    var movie = _context.Movies?.FirstOrDefault(m => m.MovieId == id);
+    var movie = _context.Movies?.AsNoTracking().FirstOrDefault(m => m.MovieId == id);
     if (movie is null)
       return NotFound("Couldn't find refered movie.");
     return movie;
